@@ -1,0 +1,104 @@
+--- emf-2.4.1/org.eclipse.emf.exporter.html/build.properties	2008-05-08 22:03:09.000000000 +0100
++++ emf-2.4.1/org.eclipse.emf.exporter.html/build.properties	2008-12-21 13:51:46.000000000 +0000
+@@ -9,8 +9,4 @@
+ source.. = src/
+ output.. = bin/
+ src.includes = about.html,\
+-               .classpath,\
+-               .jetproperties,\
+-               .project,\
+-               .settings/,\
+                build.properties
+--- emf-2.4.1/org.eclipse.emf.java/build.properties	2008-05-08 22:03:09.000000000 +0100
++++ emf-2.4.1/org.eclipse.emf.java/build.properties	2008-12-21 16:06:41.000000000 +0000
+@@ -9,7 +9,4 @@
+ source.. = src/
+ exclude.. = **/doc-files/**
+ src.includes = about.html,\
+-               .classpath,\
+-               .project,\
+-               .settings/,\
+                build.properties
+--- emf-2.4.1/org.eclipse.emf.java.edit/build.properties	2008-05-08 22:03:09.000000000 +0100
++++ emf-2.4.1/org.eclipse.emf.java.edit/build.properties	2008-12-21 16:06:25.000000000 +0000
+@@ -9,7 +9,4 @@
+ source.. = src/
+ exclude.. = **/doc-files/**
+ src.includes = about.html,\
+-               .classpath,\
+-               .project,\
+-               .settings/,\
+                build.properties
+--- emf-2.4.1/org.eclipse.emf.java.editor/build.properties	2008-05-08 22:03:09.000000000 +0100
++++ emf-2.4.1/org.eclipse.emf.java.editor/build.properties	2008-12-21 16:06:14.000000000 +0000
+@@ -9,7 +9,4 @@
+ source.. = src/
+ exclude.. = **/doc-files/**
+ src.includes = about.html,\
+-               .classpath,\
+-               .project,\
+-               .settings/,\
+                build.properties
+--- emf-2.4.1/org.eclipse.emf.examples.generator.validator/build.properties	2008-05-08 22:03:09.000000000 +0100
++++ emf-2.4.1/org.eclipse.emf.examples.generator.validator/build.properties	2008-12-21 16:26:48.000000000 +0000
+@@ -9,8 +9,4 @@
+ source.. = src/
+ output.. = bin/
+ src.includes = about.html,\
+-               .classpath,\
+-               .jetproperties,\
+-               .project,\
+-               .settings/,\
+                build.properties
+--- emf-2.4.1/org.eclipse.emf.examples.library/build.properties	2008-05-08 22:03:09.000000000 +0100
++++ emf-2.4.1/org.eclipse.emf.examples.library/build.properties	2008-12-21 16:29:26.000000000 +0000
+@@ -7,7 +7,4 @@
+ source.. = src/
+ output.. = bin/
+ src.includes = about.html,\
+-               .classpath,\
+-               .project,\
+-               .settings/,\
+                build.properties
+--- emf-2.4.1/org.eclipse.emf.examples.library.edit/build.properties	2008-05-08 22:03:09.000000000 +0100
++++ emf-2.4.1/org.eclipse.emf.examples.library.edit/build.properties	2008-12-21 16:29:46.000000000 +0000
+@@ -7,7 +7,4 @@
+ source.. = src/
+ output.. = bin/
+ src.includes = about.html,\
+-               .classpath,\
+-               .project,\
+-               .settings/,\
+                build.properties
+--- emf-2.4.1/org.eclipse.emf.examples.library.editor/build.properties	2008-05-08 22:03:09.000000000 +0100
++++ emf-2.4.1/org.eclipse.emf.examples.library.editor/build.properties	2008-12-21 16:30:04.000000000 +0000
+@@ -7,7 +7,4 @@
+ source.. = src/
+ output.. = bin/
+ src.includes = about.html,\
+-               .classpath,\
+-               .project,\
+-               .settings/,\
+                build.properties
+--- emf-2.4.1/org.eclipse.xsd.example/build.properties	2008-05-06 01:01:46.000000000 +0100
++++ emf-2.4.1/org.eclipse.xsd.example/build.properties	2008-12-21 16:33:42.000000000 +0000
+@@ -5,9 +5,6 @@
+                plugin.properties,\
+                META-INF/
+ src.includes = about.html,\
+-               .classpath,\
+-               .project,\
+-               .settings/,\
+                build.properties
+ source.. = src/
+ output.. = bin/
+--- emf-2.4.1/org.eclipse.emf.importer.java/build.properties	2008-04-29 19:54:07.000000000 +0100
++++ emf-2.4.1/org.eclipse.emf.importer.java/build.properties	2008-12-21 17:01:37.000000000 +0000
+@@ -6,7 +6,6 @@
+                META-INF/,\
+                ant_tasks/importer.java.tasks.jar
+ src.includes = about.html,\
+-               examples/,\
+                readme.html
+ jars.compile.order = .,\
+                      ant_tasks/importer.java.tasks.jar

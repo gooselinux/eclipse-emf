@@ -1,0 +1,138 @@
+--- emf-2.4.1/org.eclipse.xsd.example.installer/customBuildCallbacks.xml	2008-12-23 20:49:55.000000000 +0000
++++ emf-2.4.1/org.eclipse.xsd.example.installer/customBuildCallbacks.xml	2008-12-23 21:05:55.000000000 +0000
+@@ -18,26 +18,15 @@
+ 	<!-- ===================================================================== -->
+ 
+ 	<target name="pre.build.jars">
+-		<!-- ${build.result.folder} = /home/www-data/build/emf/downloads/drops/2.4.0/N200805051552/eclipse/plugins/org.eclipse.emf.example.installer -->
+-		<property file="${build.result.folder}/../../../build.cfg" />
+-		<condition property="exampleCVSTag" value="build_${buildTimestamp}" else="${branch}">
+-			<istrue value="${tagBuild}"/>
+-		</condition>
+-		<echo message="Checking out org.eclipse.mdt/org.eclipse.xsd/examples from ${exampleCVSTag} ..."/> 
+-		<cvs failonerror="true" dest="${build.result.folder}/examples" cvsroot=":pserver:anonymous@dev.eclipse.org:/cvsroot/modeling">
+-			<commandline>
+-				<argument line="-Q export -r ${exampleCVSTag} org.eclipse.mdt/org.eclipse.xsd/examples" />
+-			</commandline>
+-		</cvs>
+-
+-		<move todir="${build.result.folder}/examples/" includeemptydirs="true">
+-			<fileset dir="${build.result.folder}/examples/org.eclipse.mdt/org.eclipse.xsd/examples/">
++		<echo message="Copying example plugin projects ..."/> 
++		<copy todir="${build.result.folder}/examples/org.eclipse.xsd.example" includeemptydirs="true" failonerror="true">
++			<fileset dir="${build.result.folder}/../org.eclipse.xsd.example/">
+ 				<exclude name="**/.cvsignore" />
++				<exclude name="**/javaCompiler...args" />
++				<exclude name="**/build.xml" />
+ 				<exclude name="**/build/**" />
+ 			</fileset>
+-		</move>
+-
+-		<delete dir="${build.result.folder}/examples/org.eclipse.mdt" />
++		</copy>
+ 	</target>
+ 
+ 	
+--- emf-2.4.1/org.eclipse.emf.example.installer/customBuildCallbacks.xml	2008-05-06 21:36:59.000000000 +0100
++++ emf-2.4.1/org.eclipse.emf.example.installer/customBuildCallbacks.xml	2008-12-23 21:09:43.000000000 +0000
+@@ -18,27 +18,79 @@
+ 	<!-- ===================================================================== -->
+ 
+ 	<target name="pre.build.jars">
+-		<!-- ${build.result.folder} = /home/www-data/build/emf/downloads/drops/2.4.0/N200805051552/eclipse/plugins/org.eclipse.emf.example.installer -->
+-		<property file="${build.result.folder}/../../../build.cfg" />
+-		<condition property="exampleCVSTag" value="build_${buildTimestamp}" else="${branch}">
+-			<istrue value="${tagBuild}"/>
+-		</condition>
+-		<echo message="Checking out org.eclipse.emf/org.eclipse.emf/examples from ${exampleCVSTag} ..."/> 
+-		<cvs failonerror="true" dest="${build.result.folder}/examples" cvsroot=":pserver:anonymous@dev.eclipse.org:/cvsroot/modeling">
+-			<commandline>
+-				<argument line="-Q export -r ${exampleCVSTag} org.eclipse.emf/org.eclipse.emf/examples" />
+-			</commandline>
+-		</cvs>
+-
+-		<move todir="${build.result.folder}/examples/" includeemptydirs="true">
+-			<fileset dir="${build.result.folder}/examples/org.eclipse.emf/org.eclipse.emf/examples/">
+-				<exclude name="**/.cvsignore" />
+-			</fileset>
+-		</move>
+-
+-		<delete dir="${build.result.folder}/examples/org.eclipse.emf" />
+-		<delete dir="${build.result.folder}/examples/org.eclipse.emf.examples" />
+-		<delete dir="${build.result.folder}/examples/org.eclipse.emf.examples-feature" />
++		<echo message="Copying example plugin projects ..."/> 
++		<copy todir="${build.result.folder}/examples/org.eclipse.emf.activities" includeemptydirs="true" failonerror="true">
++			<fileset dir="${build.result.folder}/../org.eclipse.emf.activities/">
++				<exclude name="**/.cvsignore" />
++				<exclude name="**/javaCompiler...args" />
++				<exclude name="**/build.xml" />
++				<exclude name="**/build/**" />
++			</fileset>
++		</copy>
++		<copy todir="${build.result.folder}/examples/org.eclipse.emf.examples.generator.validator" includeemptydirs="true" failonerror="true">
++			<fileset dir="${build.result.folder}/../org.eclipse.emf.examples.generator.validator/">
++				<exclude name="**/.cvsignore" />
++				<exclude name="**/javaCompiler...args" />
++				<exclude name="**/build.xml" />
++				<exclude name="**/build/**" />
++			</fileset>
++		</copy>
++		<copy todir="${build.result.folder}/examples/org.eclipse.emf.examples.library" includeemptydirs="true" failonerror="true">
++			<fileset dir="${build.result.folder}/../org.eclipse.emf.examples.library/">
++				<exclude name="**/.cvsignore" />
++				<exclude name="**/javaCompiler...args" />
++				<exclude name="**/build.xml" />
++				<exclude name="**/build/**" />
++			</fileset>
++		</copy>
++		<copy todir="${build.result.folder}/examples/org.eclipse.emf.examples.library.edit" includeemptydirs="true" failonerror="true">
++			<fileset dir="${build.result.folder}/../org.eclipse.emf.examples.library.edit/">
++				<exclude name="**/.cvsignore" />
++				<exclude name="**/javaCompiler...args" />
++				<exclude name="**/build.xml" />
++				<exclude name="**/build/**" />
++			</fileset>
++		</copy>
++		<copy todir="${build.result.folder}/examples/org.eclipse.emf.examples.library.editor" includeemptydirs="true" failonerror="true">
++			<fileset dir="${build.result.folder}/../org.eclipse.emf.examples.library.editor/">
++				<exclude name="**/.cvsignore" />
++				<exclude name="**/javaCompiler...args" />
++				<exclude name="**/build.xml" />
++				<exclude name="**/build/**" />
++			</fileset>
++		</copy>
++		<copy todir="${build.result.folder}/examples/org.eclipse.emf.exporter.html" includeemptydirs="true" failonerror="true">
++			<fileset dir="${build.result.folder}/../org.eclipse.emf.exporter.html/">
++				<exclude name="**/.cvsignore" />
++				<exclude name="**/javaCompiler...args" />
++				<exclude name="**/build.xml" />
++				<exclude name="**/build/**" />
++			</fileset>
++		</copy>
++		<copy todir="${build.result.folder}/examples/org.eclipse.emf.java" includeemptydirs="true" failonerror="true">
++			<fileset dir="${build.result.folder}/../org.eclipse.emf.java/">
++				<exclude name="**/.cvsignore" />
++				<exclude name="**/javaCompiler...args" />
++				<exclude name="**/build.xml" />
++				<exclude name="**/build/**" />
++			</fileset>
++		</copy>
++		<copy todir="${build.result.folder}/examples/org.eclipse.emf.java.edit" includeemptydirs="true" failonerror="true">
++			<fileset dir="${build.result.folder}/../org.eclipse.emf.java.edit/">
++				<exclude name="**/.cvsignore" />
++				<exclude name="**/javaCompiler...args" />
++				<exclude name="**/build.xml" />
++				<exclude name="**/build/**" />
++			</fileset>
++		</copy>
++		<copy todir="${build.result.folder}/examples/org.eclipse.emf.java.editor" includeemptydirs="true" failonerror="true">
++			<fileset dir="${build.result.folder}/../org.eclipse.emf.java.editor/">
++				<exclude name="**/.cvsignore" />
++				<exclude name="**/javaCompiler...args" />
++				<exclude name="**/build.xml" />
++				<exclude name="**/build/**" />
++			</fileset>
++		</copy>
+ 	</target>
+ 	
+ 	<!-- ===================================================================== -->

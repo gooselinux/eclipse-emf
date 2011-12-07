@@ -1,0 +1,22 @@
+--- org.eclipse.emf.doc/build/javadoc.xml.template	2008-12-11 15:46:37.000000000 +0000
++++ org.eclipse.emf.doc/build/javadoc.xml.template	2008-12-11 16:11:50.000000000 +0000
+@@ -12,7 +12,7 @@
+ 	<available property="platformJavadocExists" file="${javadoc.link.location}/platform/"/>
+ 
+ 	<target name="extractPlatformJavadoc" unless="platformJavadocExists">
+-		<unzip src="${eclipseDir}/plugins/org.eclipse.platform.doc.isv.jar" dest="${javadoc.link.location}/platform/"/>
++		<unzip dest="${javadoc.link.location}/platform/"><fileset dir="${eclipseDir}/SDK/plugins"><include name="org.eclipse.platform.doc.isv_*.jar"/></fileset></unzip>
+ 	</target>
+ 	
+ 	<target name="javadoc" depends="extractPlatformJavadoc">
+--- org.eclipse.xsd.doc/build/javadoc.xml.template	2008-12-11 15:46:37.000000000 +0000
++++ org.eclipse.xsd.doc/build/javadoc.xml.template	2008-12-11 16:11:50.000000000 +0000
+@@ -12,7 +12,7 @@
+ 	<available property="platformJavadocExists" file="${javadoc.link.location}/platform/"/>
+ 
+ 	<target name="extractPlatformJavadoc" unless="platformJavadocExists">
+-		<unzip src="${eclipseDir}/plugins/org.eclipse.platform.doc.isv.jar" dest="${javadoc.link.location}/platform/"/>
++		<unzip dest="${javadoc.link.location}/platform/"><fileset dir="${eclipseDir}/SDK/plugins"><include name="org.eclipse.platform.doc.isv_*.jar"/></fileset></unzip>
+ 	</target>
+ 	
+ 	<target name="javadoc" depends="extractPlatformJavadoc">
